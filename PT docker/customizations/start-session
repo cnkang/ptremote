@@ -1,4 +1,5 @@
 #!/bin/bash
+#Cleaning up for the previous X sessions after restart
 rm -f /home/ptuser/.vnc/*.pid
 rm -f /home/ptuser/.vnc/*.log
 rm -Rf /tmp/.X*
