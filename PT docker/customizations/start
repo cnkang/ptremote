@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# disable DNS resolution for PT auth
+echo > /etc/resolv.conf
+
+su -l -c /start-session ptuser

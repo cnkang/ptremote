@@ -1,0 +1,20 @@
+#!/bin/bash
+rm -f /home/ptuser/.vnc/*.pid
+rm -f /home/ptuser/.vnc/*.log
+rm -Rf /tmp/.X*
+echo "Starting the VNC server ..."
+#/usr/bin/vncserver -geometry 1800x1000 
+/usr/bin/vncserver -geometry 1200x800
+
+sleep 5
+pt_pid="$(pidof -s PacketTracer7)"
+sleep 5
+if ! ps -p ${pt_pid} >/dev/null; then
+    pt_pid=
+    echo "Failed to start Packet Tracer"
+    exit 1
+fi
+
+while true; do sleep 3600; done
+
+
