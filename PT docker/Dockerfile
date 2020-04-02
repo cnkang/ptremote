@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Jozef Janitor
+LABEL maintainer="Jozef Janitor"
 
 ENV DEBIAN_FRONTEND noninteractive 
 RUN apt-get update && \
