@@ -1,0 +1,12 @@
+# Build a container:
+docker build . -t ptweb
+
+# run a container per session:
+#  each session is exposed as one TCP port for the VNC WebSocket:
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6902:6901  ptweb
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6903:6901  ptweb
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6904:6901  ptweb
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6905:6901  ptweb
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6906:6901  ptweb
+docker run -d --cpus=1 -m 1.5G --kernel-memory 1.5G --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p 6907:6901  ptweb
+

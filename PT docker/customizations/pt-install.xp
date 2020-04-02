@@ -1,0 +1,13 @@
+#!/usr/bin/expect 
+set timeout 86400
+
+#spawn bash -c "set -e && apt-get -y install /PacketTracer_*_amd64.deb"
+spawn bash -c "DEBIAN_FRONTEND=readline apt-get -y install /PacketTracer_*_amd64.deb"
+
+#expect "\\\[More\\\]"
+#send "q\r"
+
+expect "Do you accept the terms of this EULA? \\\[yes/no\\\]"
+send "yes\r"
+
+expect eof
