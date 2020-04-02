@@ -1,4 +1,4 @@
-# ptremote
+# Packet Tracer Remote
 The script allow users create Packet Tracer remote access for users by using dockers on Ubuntu Linux server.
 
 Cisco or the author of the script will NOT provide support for this script.
