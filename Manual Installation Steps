@@ -115,3 +115,5 @@ All the username and password can be changed by the admin user. Admin user can a
 In case if any of the Packet Tracer docker have problem, just run "docker restart ptvncX".
 If still can not work, stop the docker "docker stop ptvncX", remove it "docker rm ptvncX", 
 then recreate it "docker run -d --name ptvncX(CHANGE THIS!) --restart unless-stopped --cpus=0.1 -m 512M --kernel-memory 64M --oom-kill-disable --ulimit nproc=512 --ulimit nofile=1024:1024 ptvnc"
+
+The firefox is installed inside the Packet Tracer container, but we disabled the Internet access.
