@@ -5,7 +5,7 @@ rm -f /home/ptuser/.vnc/*.log
 rm -Rf /tmp/.X*
 echo "Starting the VNC server ..."
 #/usr/bin/vncserver -geometry 1800x1000 
-/usr/bin/vncserver -geometry 1200x800
+/usr/bin/vncserver -geometry 1280x1024
 
 sleep 5
 pt_pid="$(pidof -s PacketTracer7)"
