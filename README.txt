@@ -96,12 +96,10 @@ sudo docker start pt-guacamole
 sudo docker start pt-nginx1
 
 In case if student have problem with the container assigned, you can restart the container with the following command:
-(use ptvnc1 as example, please change it to the actual container name that have problem)
+(use ptvnc1 as an example, please change it to the actual container name that have a problem)
 sudo docker restart ptvnc1
 If the command above still can not solve the problem, you can recreate it with the following commands:
 (CAUTION: this will delete all the files stored inside the container)
 sudo docker stop ptvnc1
 sudo docker rm ptvnc1
 sudo docker run -d --name ptvnc1 --restart unless-stopped --cpus=0.1 -m 512M --kernel-memory 64M --oom-kill-disable --ulimit nproc=512 --ulimit nofile=1024:1024 ptvnc
-
-
