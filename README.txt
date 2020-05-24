@@ -1,25 +1,33 @@
-This is a sample/proof of concept about installing Packet Tracer on a server and provide remote access to the users.
+# Packet Tracer Remote
+This is a sample/proof of concept for installing Packet Tracer on a server and provide remote access to the users.
 
-Special Thanks:
-Contributors: Elaine Horn, Justin Valentino, Paul Fedele, Steve Stiles
+Cisco and/or the author of the script does NOT provide support.
+
+Cisco Packet Tracer is an innovative and powerful networking siulation tool used for practice, discovery and troubleshooting.
+The Packet Tracer is available to all netacad.com user.
+This script will not provide you the installer of Packet Tracer, you can get a copy by registering the free "Introduction to Packet Tracer" course at https://www.netacad.com/courses/packet-tracer get a copy of the software and learn the basic features of Packet Tracer.
+
+
+##Special Thanks:
+NetAcad Instructor Contributors: Elaine Horn, Justin Valentino, Paul Fedele, Steve Stiles
 NetAcad product team: Farsheed Tari, Giuseppe Cinque, Jozef Janitor, Kang Liu
 NetAcad field team: Clydene Stangvik, Jessie Pagan, Marie Zwickert, Rebecca Chisolm
 NetAcad technical field team: Echo Rantanen
 
-Hardware & Software requirement:
+##Hardware & Software requirement:
 To install on your server, the server should have 
 Minimal memory: 1G
 Minimal storage: 15G
 Recommanded memory: 4G or more
 The script was tested on Ubuntu 18.04.4 LTS server.
 
-Installation:
+##Installation:
 Copy the script and "PacketTracer_730_amd64.deb" into the same folder.
 You can get a copy of the Packet Tracer and learn the basic features by registering the free "Introduction to Packet Tracer" course at 
 https://www.netacad.com/courses/packet-tracer 
-Run the script and follow the instruction, then it will download and install the other required packages.
+Run the script and follow the instruction, then it will download and install the packages required.
 
-Update the home page:
+###Update the home page:
 The web page and configuration for the page can be found from a sub folder inside your installation file folder.
 The ptweb.conf is the configuration file, the files in "www" folder are the default sample homepage.
 ptweb-vnc
@@ -28,21 +36,21 @@ ptweb-vnc
     │   └── ptweb.conf
     └── www
 
-Default Users:
-HIGHLY SUGGEST CHANGE THE PASSWORD FOR THE DEFAULT USERS!
+###Default Users:
+HIGHLY SUGGEST CHANGE THE PASSWORD OF THE DEFAULT USERS!
 Admin username: ptadmin
 Default admin password: IlovePT
 Users: pt01 (pt02-pt10 also avaiable)
 Default password: 123
 
-User Management:
+###User Management:
 Login with the admin user, goto the pulldown menu on the top right and click Settings
 Click the "Users" tab, and choose the user from the list and modify the password and other settings.
 In case if you break something, the default setting can be restored with the following command:
 (go to the installation folder first)
 sudo docker exec -i guacamole-mariadb mysql -uptdbuser -pptdbpass <  ptweb-vnc/db-dump.sql
 
-Manage Packet Tracer activity files:
+###Manage Packet Tracer activity files:
 Use the following command to copy the file into the container:
 (use ptvnc1 as example, please change it to the actual container name that you need to copy the files into)
 sudo docker cp <source file> ptvnc1:/home/ptuser/Desktop/
@@ -53,13 +61,13 @@ You can consider mount a folder into the docker and give access to the user.
 For more details: https://docs.docker.com/storage/bind-mounts/
 Please feel free to modify the script and make it work for you. 
 
-Clipboard and Session logout:
+###Clipboard and Session logout:
 After login to the Apache Guacamole, press the shortcut key "Ctrl+Alt+Shift", a window will popup on the left side of the screen.
 Then you can use the Clipboard to copy texts into and from the remote session.
 To logout, click the username on the top right of the popup window, then click Logout.
 Users content will stay, they can resume the work after login again.
 
-Known Issue:
+##Known Issue:
 Some container may not start due to various reasons, including but not limit to the sequence of startup, high CPU load and limited available memory.
 Workaround:
 Check which docker did not start and start it manually with the following steps:
@@ -82,17 +90,16 @@ d3aecc321e67        ptvnc                 "/start"                 8 minutes ago
 6b15fed09a37        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc1
 1f4fdbb8fdf8        mariadb:latest        "docker-entrypoint.s…"   8 minutes ago       Up 5 minutes                 3306/tcp             guacamole-mariadb
 
-In this sample, the first 2 docker did not start, then you can start them manually with the following command:
+In this example, the first 2 docker did not start, then you can start them manually with the following command "sudo docker start <name>":
+For example:
 sudo docker start pt-guacamole
 sudo docker start pt-nginx1
 
 In case if student have problem with the container assigned, you can restart the container with the following command:
-(use ptvnc1 as example, please change it to the actual container name that have problem)
+(use ptvnc1 as an example, please change it to the actual container name that have a problem)
 sudo docker restart ptvnc1
 If the command above still can not solve the problem, you can recreate it with the following commands:
 (CAUTION: this will delete all the files stored inside the container)
 sudo docker stop ptvnc1
 sudo docker rm ptvnc1
 sudo docker run -d --name ptvnc1 --restart unless-stopped --cpus=0.1 -m 512M --kernel-memory 64M --oom-kill-disable --ulimit nproc=512 --ulimit nofile=1024:1024 ptvnc
-
-
