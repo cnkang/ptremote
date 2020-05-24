@@ -1,9 +1,0 @@
-# Build a container:
-docker build . -t ptvnc
-
-# run a test container:
-# session is exposed as one TCP port (5901) for the VNC:
-docker run -name testptvnc -d --cpus=0.1 -m 512M --kernel-memory 64M --ulimit nproc=512 --ulimit nofile=1024:1024  --rm -p:5901:5901 ptvnc
-
-# to stop the docker
-docker stop testptvnc
