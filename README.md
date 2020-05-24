@@ -1,3 +1,4 @@
+
 # Packet Tracer Remote
 This is a sample/proof of concept for installing Packet Tracer on a server and provide remote access to the users.
 
@@ -9,10 +10,14 @@ This script will not provide you the installer of Packet Tracer, you can get a c
 
 
 ## Special Thanks:
-NetAcad Instructor Contributors: Elaine Horn, Justin Valentino, Paul Fedele, Steve Stiles
-NetAcad product team: Farsheed Tari, Giuseppe Cinque, Jozef Janitor, Kang Liu
-NetAcad field team: Clydene Stangvik, Jessie Pagan, Marie Zwickert, Rebecca Chisolm
-NetAcad technical field team: Echo Rantanen
+
+ - NetAcad Instructor Contributors: Elaine Horn, Justin Valentino, Paul
+   Fedele, Steve Stiles
+ - NetAcad product team: Farsheed Tari, Giuseppe Cinque, Jozef Janitor,
+   Kang Liu
+ - NetAcad field team: Clydene Stangvik, Jessie Pagan, Marie Zwickert,
+   Rebecca Chisolm
+ - NetAcad technical field team: Echo Rantanen
 
 ## Hardware & Software requirement:
 To install on your server, the server should have 
@@ -30,33 +35,40 @@ Run the script and follow the instruction, then it will download and install the
 ### Update the home page:
 The web page and configuration for the page can be found from a sub folder inside your installation file folder.
 The ptweb.conf is the configuration file, the files in "www" folder are the default sample homepage.
-ptweb-vnc<br>
-└── pt-nginx<br>
-    ├── conf<br>
-    │   └── ptweb.conf<br>
-    └── www<br>
-
+```sh
+ptweb-vnc
+└── pt-nginx
+    ├── conf
+    │   └── ptweb.conf
+    └── www
+```
 ### Default Users:
 HIGHLY SUGGEST CHANGE THE PASSWORD OF THE DEFAULT USERS!
+```sh
 Admin username: ptadmin
 Default admin password: IlovePT
 Users: pt01 (pt02-pt10 also avaiable)
 Default password: 123
-
+```
 ### User Management:
 Login with the admin user, goto the pulldown menu on the top right and click Settings
 Click the "Users" tab, and choose the user from the list and modify the password and other settings.
 In case if you break something, the default setting can be restored with the following command:
 (go to the installation folder first)
+```sh
 sudo docker exec -i guacamole-mariadb mysql -uptdbuser -pptdbpass <  ptweb-vnc/db-dump.sql
-
+```
 ### Manage Packet Tracer activity files:
-Use the following command to copy the file into the container:
+Use the following command to copy the file into the container:<br>
 (use ptvnc1 as example, please change it to the actual container name that you need to copy the files into)
+```sh
 sudo docker cp <source file> ptvnc1:/home/ptuser/Desktop/
-to copy the files from the container, use the following command:
+```
+to copy the files from the container, use the following command:<br>
 (Assume the file is saved on Desktop)
+```sh
 sudo docker cp ptvnc1:/home/ptuser/Desktop/<filename> .
+```
 You can consider mount a folder into the docker and give access to the user. 
 For more details: https://docs.docker.com/storage/bind-mounts/
 Please feel free to modify the script and make it work for you. 
