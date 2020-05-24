@@ -28,7 +28,7 @@ To install on your server, the server should have
  - Minimal storage: 15G
 
 ## Installation:
-Copy the script and "PacketTracer_730_amd64.deb" into the same folder.
+Copy the "install.sh" script and "PacketTracer_730_amd64.deb" into the same folder.
 You can get a copy of the Packet Tracer and learn the basic features by registering the free "Introduction to Packet Tracer" course at 
 https://www.netacad.com/courses/packet-tracer 
 Run the script and follow the instruction, then it will download and install the packages required.
