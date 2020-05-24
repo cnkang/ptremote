@@ -21,9 +21,9 @@ This script will not provide you the installer of Packet Tracer, you can get a c
 
 ## Hardware & Software requirement:
 To install on your server, the server should have 
-Minimal memory: 1G
-Minimal storage: 15G
-Recommanded memory: 4G or more
+ - Minimal memory: 1G
+ - Recommanded memory: 4G or more
+ - Minimal storage: 15G
 The script was tested on Ubuntu 18.04.4 LTS server.
 
 ## Installation:
