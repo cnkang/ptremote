@@ -81,9 +81,9 @@ To logout, click the username on the top right of the popup window, then click L
 Users content will stay, they can resume the work after login again.
 
 ## Known Issue:
-Some container may not start due to various reasons, including but not limit to the sequence of startup, high CPU load and limited available memory.
-Workaround:
-Check which docker did not start and start it manually with the following steps:
+Some container may not start due to various reasons, including but not limit to the sequence of startup, high CPU load and limited available memory.<br>
+Workaround:<br>
+Check which docker did not start and start it manually with the following steps:<br>
 use "sudo docker ps -a" to check if all the dockers are running
 ```sh
 Sample Output:
@@ -104,8 +104,7 @@ Sample Output:
         6b15fed09a37        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc1
         1f4fdbb8fdf8        mariadb:latest        "docker-entrypoint.s…"   8 minutes ago       Up 5 minutes                 3306/tcp             guacamole-mariadb
 ```
-In this example, the first 2 docker did not start, then you can start them manually with the following command "sudo docker start <name>":
-For example:
+In this example, the first 2 docker did not start, then you can start them manually with the following command "sudo docker start <name>", for example:
 ```sh
 sudo docker start pt-guacamole
 sudo docker start pt-nginx1
