@@ -3,7 +3,7 @@ This is a sample/proof of concept for installing Packet Tracer on a server and p
 
 Cisco and/or the author of the script does NOT provide support.
 
-Cisco Packet Tracer is an innovative and powerful networking siulation tool used for practice, discovery and troubleshooting.
+Cisco Packet Tracer is an innovative and powerful networking simulation tool used for practice, discovery and troubleshooting.
 The Packet Tracer is available to all netacad.com user.
 This script will not provide you the installer of Packet Tracer, you can get a copy by registering the free "Introduction to Packet Tracer" course at https://www.netacad.com/courses/packet-tracer get a copy of the software and learn the basic features of Packet Tracer.
 
