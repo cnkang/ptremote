@@ -1,4 +1,3 @@
-
 # Packet Tracer Remote
 This is a sample/proof of concept for installing Packet Tracer on a server and provide remote access to the users.
 
@@ -33,6 +32,7 @@ You can get a copy of the Packet Tracer and learn the basic features by register
 https://www.netacad.com/courses/packet-tracer 
 Run the script and follow the instruction, then it will download and install the packages required.
 
+## Configuration and Operation
 ### Update the home page:
 The web page and configuration for the page can be found from a sub folder inside your installation file folder.
 The ptweb.conf is the configuration file, the files in "www" folder are the default sample homepage.
