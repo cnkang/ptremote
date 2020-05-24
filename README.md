@@ -21,7 +21,7 @@ Minimal storage: 15G
 Recommanded memory: 4G or more
 The script was tested on Ubuntu 18.04.4 LTS server.
 
-##Installation:
+## Installation:
 Copy the script and "PacketTracer_730_amd64.deb" into the same folder.
 You can get a copy of the Packet Tracer and learn the basic features by registering the free "Introduction to Packet Tracer" course at 
 https://www.netacad.com/courses/packet-tracer 
@@ -30,11 +30,11 @@ Run the script and follow the instruction, then it will download and install the
 ### Update the home page:
 The web page and configuration for the page can be found from a sub folder inside your installation file folder.
 The ptweb.conf is the configuration file, the files in "www" folder are the default sample homepage.
-ptweb-vnc
-└── pt-nginx
-    ├── conf
-    │   └── ptweb.conf
-    └── www
+ptweb-vnc<br>
+└── pt-nginx<br>
+    ├── conf<br>
+    │   └── ptweb.conf<br>
+    └── www<br>
 
 ### Default Users:
 HIGHLY SUGGEST CHANGE THE PASSWORD OF THE DEFAULT USERS!
@@ -73,22 +73,22 @@ Workaround:
 Check which docker did not start and start it manually with the following steps:
 use "sudo docker ps -a" to check if all the dockers are running
 Sample Output:
-# docker ps -a
-CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                       PORTS                NAMES
-d3af8c36dff4        nginx                 "nginx -g 'daemon of…"   6 minutes ago       Exited (255) 5 minutes ago   0.0.0.0:80->80/tcp   pt-nginx1
-182da42ee992        guacamole/guacamole   "/opt/guacamole/bin/…"   6 minutes ago       Exited (255) 5 minutes ago   8080/tcp             pt-guacamole
-cfd1e9630003        guacamole/guacd       "/bin/sh -c '/usr/lo…"   6 minutes ago       Up 5 minutes                 4822/tcp             pt-guacd
-1f605ebfa2dd        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc10
-63ff68c02527        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc9
-fd506a1f16b5        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc8
-af505c45adf5        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc7
-79bb270cdb71        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc6
-f2694744219a        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc5
-8f2213b31511        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc4
-d3aecc321e67        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc3
-2fdff69bed34        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc2
-6b15fed09a37        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc1
-1f4fdbb8fdf8        mariadb:latest        "docker-entrypoint.s…"   8 minutes ago       Up 5 minutes                 3306/tcp             guacamole-mariadb
+        #docker ps -a
+        CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                       PORTS                NAMES
+        d3af8c36dff4        nginx                 "nginx -g 'daemon of…"   6 minutes ago       Exited (255) 5 minutes ago   0.0.0.0:80->80/tcp   pt-nginx1
+        182da42ee992        guacamole/guacamole   "/opt/guacamole/bin/…"   6 minutes ago       Exited (255) 5 minutes ago   8080/tcp             pt-guacamole
+        cfd1e9630003        guacamole/guacd       "/bin/sh -c '/usr/lo…"   6 minutes ago       Up 5 minutes                 4822/tcp             pt-guacd
+        1f605ebfa2dd        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc10
+        63ff68c02527        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc9
+        fd506a1f16b5        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc8
+        af505c45adf5        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc7
+        79bb270cdb71        ptvnc                 "/start"                 7 minutes ago       Up 5 minutes                                      ptvnc6
+        f2694744219a        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc5
+        8f2213b31511        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc4
+        d3aecc321e67        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc3
+        2fdff69bed34        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc2
+        6b15fed09a37        ptvnc                 "/start"                 8 minutes ago       Up 5 minutes                                      ptvnc1
+        1f4fdbb8fdf8        mariadb:latest        "docker-entrypoint.s…"   8 minutes ago       Up 5 minutes                 3306/tcp             guacamole-mariadb
 
 In this example, the first 2 docker did not start, then you can start them manually with the following command "sudo docker start <name>":
 For example:
