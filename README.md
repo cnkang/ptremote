@@ -31,6 +31,12 @@ Copy the "install.sh" script and "PacketTracer_730_amd64.deb" into the same fold
 You can get a copy of the Packet Tracer and learn the basic features by registering the free "Introduction to Packet Tracer" course at 
 https://www.netacad.com/courses/packet-tracer 
 Run the script and follow the instruction, then it will download and install the packages required.
+Other than the Docker, the following applications will be installed as container:
+ - Apache Guacamole
+ - Apache Tomcat
+ - MariaDB
+ - Nginx
+ - Cisco Packet Tracer
 
 ## Configuration and Operation
 ### Customize the home page:
