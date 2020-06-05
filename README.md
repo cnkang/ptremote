@@ -10,8 +10,7 @@ This script will not provide you the installer of Packet Tracer, you can get a c
 
 ## Special Thanks:
 
- - NetAcad Instructor Contributors: Elaine Horn, Justin Valentino, Paul
-   Fedele, Steve Stiles
+ - NetAcad Instructor Contributors: Bernadette Obrien, Dan Foss, Denis Huffman, Elaine Horn, Gay Berryman,Paul Fedele, Sandy Thomaschek, Scott Stephenson, Steve Stiles
  - NetAcad product team: Farsheed Tari, Giuseppe Cinque, Jozef Janitor,
    Kang Liu
  - NetAcad field team: Clydene Stangvik, Jessie Pagan, Marie Zwickert,
