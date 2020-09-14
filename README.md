@@ -26,7 +26,7 @@ To install on your server, the server should have
  - Minimal storage: 15G
 
 ## Installation:
-Copy the "install.sh" script and "PacketTracer_730_amd64.deb" into the same folder. <br>
+Copy the "install.sh" script and "PacketTracer_731_amd64.deb" into the same folder. <br>
 By default, the docker containers will be installed in "/var/lib/docker", the default web page and the nginx configuration file will be installed into the "ptweb-vnc" sub-folder where you copied the installation script. <br>
 You can get a copy of the Packet Tracer and learn the basic features by registering the free "Introduction to Packet Tracer" course at 
 https://www.netacad.com/courses/packet-tracer <br>
