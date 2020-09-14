@@ -23,8 +23,8 @@ dbuser="ptdbuser"
 dbpass="ptdbpass"
 dbname="guacamole_db" 
 numofPT=10
-PTfile="PacketTracer_730_amd64.deb"
-PTfilechecksum="c96ed6356cabeca198f8fbe237197dc7c234cd37"
+PTfile="PacketTracer_731_amd64.deb"
+PTfilechecksum="172350fc0f8bc8da04e44017d9fab4850f3af871"
 nginxport=80
 #1G memory + 4G swap can support about 10 concurrent PT user
 #DO NOT change dbname
